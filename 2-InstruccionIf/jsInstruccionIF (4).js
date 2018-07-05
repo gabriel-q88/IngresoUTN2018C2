@@ -4,7 +4,7 @@ function mostrar()
 var edad;
 edad = document.getElementById("edad").value;
 edad = parseInt(edad);
-if (edad >=13 && edad <=17);
+if (edad >=13 && edad <=17)
 {alert("La Persona es Adolecente")}
 
 
