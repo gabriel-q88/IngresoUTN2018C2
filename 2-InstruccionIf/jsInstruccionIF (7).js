@@ -5,9 +5,11 @@ var edad;
 var estadocivil;
 edad = document.getElementById("edad").value;
 edad = parseInt(edad);
-estadocivil = document.getElementById("estadoCivil").value;
+estadocivil= document.getElementById("estadoCivil").value
 if (edad <18 && estadocivil != "Soltero")
+{
+alert("es muy pequeño para NO ser soltero")} 
 
-{alert("es muy pequeño para no ser soltero")}
+
 }
 //FIN DE LA FUNCIÓN
