@@ -4,49 +4,61 @@ var numero;
 var respuesta;
 var positivo = 0;
 var negativo = 0;
-var contadorp=0;
-var contadorn=0;
-var contadorc=0;
+var contadorpos=0;
+var contadorneg=0;
+var contadorceros=0;
 var pares=0;
-var promediop;
-var promedion;
+var promediopos;
+var promedioneg;
 var diferencia;
+
 do { 
     numero = parseInt(prompt("Ingrese un numero"));
-    
-    if (numero<0){
-        negativo = negativo + numero;
-        contadorn ++;
+   if ( numero >0){
+
+    contadorpos++;
+    positivo = positivo + numero;
+
+   }else if (numero<0){
+
+    contadorneg++;
+    negativo = negativo + numero;
+   }else { 
+       numero == 0
+       contadorceros++;
     }
-    if (numero >0)
-    {
-        positivo = positivo + numero;
-        contadorp++;
-    }
-    if(numero == 0)
-    {
-        contadorc++;
-    }
-    if (numero / 2 == 0 || numero / -2 == 0)
-    {
-       pares++;
-    }
+     if (numero% 2 ==0){
+
+        pares++;
+     }
     respuesta = prompt("Desea reingresar numero?");
     respuesta = respuesta.toLowerCase();
+}
+while (respuesta == "si");
 
-}while (respuesta == "si");
+ if (contadorneg !=0){
+     promedioneg =negativo / contadorneg;
 
-promedion = negativo / contadorn;
-promediop = positivo / contadorp;
-diferencia =positivo - negativo;
-document.write("La suma de negativos es </br>" + negativo);
-document.write("La suma de los positivos es </br> " + positivo );
-document.write("La cantidad de positivos es </br> " + contadorp);
-document.write("La cantidad de negativos es </br> "  + contadorn);
-document.write("La cantidad de ceros es </br> " + contadorc);
-document.write("La cantidad de numeros pares es  </br> " + pares);
-document.write("El promedio de positivos es </br> " + promediop);
-document.write("El promedio de negativos es </br> " + promedion);
-document.write("La diferencia entre positivos y negativos es </br> " + diferencia);   
+ }
+   if (contadorpos != 0){
+
+    promediopos = positivo /contadorpos;
+   }
+   else {
+       promediopos = 0
+   }
+   diferencia = contadorpos - contadorneg;
+
+
+
+document.write("La suma de los negativos es " + negativo + "<br>");
+document.write("La suma de los positivos es " + positivo + "<br>");
+document.write("La cantidad de positivos es " + contadorpos + "<br>");
+document.write("La cantidad de negativos es " + contadorneg + "<br>");
+document.write("La cantidad de ceros es " + contadorceros + "<br>");
+document.write("La cantidad de numeros pares es " + pares + "<br>");
+document.write("El promedio de positivos es " + promediopos + "<br>");
+document.write("El promedio de negativos es " + promedioneg + "<br>");
+document.write("La diferencia entre positivos y negativos es " + diferencia + "<br>");   
 }
 //FIN DE LA FUNCIÓN
