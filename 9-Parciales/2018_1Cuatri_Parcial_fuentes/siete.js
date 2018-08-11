@@ -1,50 +1,47 @@
 function mostrar()
 {
-var notas;
+var nota;
 var sexo;
-var acumuladornotas=0;
-var notamasbaja;
-var sexonotamasbaja;
-var contadordenotasmas6=0;
+var acumuladordenotas= 0;
 var promedio;
-var flag=0;
+var notamasbaja;
+var sexomasbaja;
+var contadorvarones = 0;
+var flag = 0;
 
 
-for ( var i =0; i<5 ; i++ ){
-
-notas = parseInt(prompt("Ingrese la Nota"));
-
-while (notas <0 || notas > 10 || isNaN(notas)){
-
-    notas = parseInt(prompt("Reingrese la Nota"));
+for (var i =0; i < 5 ; i++)
+{
+    nota = parseInt(prompt("Ingrese nota"))
+while (nota <0 || nota >10 || isNaN(nota))
+{
+nota = parseInt(prompt("Nota invalida,Reingrese la nota"))
 
 }
-sexo = prompt("Ingrese el Sexo");
-
+sexo = prompt("Ingrese sexo")
 while (sexo != "f" && sexo != "m")
-    sexo = prompt("reingrese el sexo");
+{
+sexo = prompt("Error, reingrese sexo")
 
 }
+acumuladordenotas = acumuladordenotas + nota;
+if (nota < notamasbaja || flag==0)
+{
+    notamasbaja = nota;
+    sexomasbaja = sexo;
+    flag ++;
 
-acumuladornotas = acumuladornotas + notas;
-
-if (notas < notamasbaja || flag==0){
-
-    notamasbaja = notas;
-    sexonotamasbaja = sexo;
-
-    flag=1;
 }
-
-if ( sexo == " m" && notas >=6){
-
-    contadordenotasmas6++;
+if (sexo == "m" && nota >= 6 )
+{
+    contadorvarones++;
 }
+}
+ 
+promedio = acumuladordenotas / 5;
 
-promedio = acumuladornotas /5;
+alert("El promedio es " + promedio + "\n La nota mas baja es  " + notamasbaja + " y el sexo es " +sexomasbaja+ "\n La cantidad de varones con nota mayor a 6 es "+ contadorvarones )
 
-alert("El promedio de las notas es: "+ promedio + "\n La nota mas baja es: " + notamasbaja +
-"\n El sexo de esa persona es: " + sexonotamasbaja + "\n La cantidad de varones con nota mayor o igual a seis es: "
-+ contadordenotasmas6 );
+
 }
 

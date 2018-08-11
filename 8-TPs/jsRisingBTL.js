@@ -9,16 +9,7 @@ F.	Nacionalidad, “A” para argentinos, “E” para extranjeros, “N” para
  */
 function ComenzarIngreso () 
 {
- var edad;
- var sexo;
- var estadocivil;
- var sueldobruto;
- var legajo;
- var nacionalidad;
 
- edad = parseInt(prompt("Ingrese una edad"));
-
- while (edad >= 18 && edad <= 90){
      
- }
+ 
 }
